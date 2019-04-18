@@ -1,0 +1,348 @@
+ INFO | PRODUCER: Button 1 pressed
+ INFO | PRODUCER: Button 1 released
+ INFO | PRODUCER: Acceleration sensor value is: 0 G
+ INFO | CONSUMER: Button 1 pressed
+ INFO | CONSUMER: Button 1 released
+ INFO | PRODUCER: CoAPServer: Incoming CoAP request:Option ContractAddress, Payload: 0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E 
+ INFO | PRODUCER: ContractAddress request received
+ INFO | CONSUMER: CoAPClient server response: ContractAddress_0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2; Length: 58
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_sendTransaction",
+ INFO | CONSUMER: 	"params":	[{
+ INFO | CONSUMER: 			"from":	"0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E",
+ INFO | CONSUMER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | CONSUMER: 			"gas":	"0xfffffffffff",
+ INFO | CONSUMER: 			"value":	"0x1BC16D674EC80000",
+ INFO | CONSUMER: 			"data":	"0x2ea8dff5000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001102d2d2d2d2d424547494e205055424c4943204b45592d2d2d2d2d0a4d4947664d413047435371475349623344514542415155414134474e4144434269514b4267514355796f443255457a3645786f6c7a54676130727a6941754e660a587865532f354e79596568776e554d794c5542346a38693558424166466c64727a446d6b3844393733724177794b4a3976347371464e797a6a6a4a70496f6e300a4d434435643257532b3734767970766356365654575150706b382f70564c394d34313052764852436468523773566a5970393159724358414f447179307158510a6a3539634c6b745a683044563042697870774944415141420a2d2d2d2d2d454e44205055424c4943204b45592d2d2d2d2d0a"
+ INFO | CONSUMER: 		}],
+ INFO | CONSUMER: 	"id":	3
+  INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":3,"jsonrpc":"2.0","result":"0x01ccbb06aab710540482f7a93fcd581bd3f3542e161638ddeb447ed9182cbadc"}
+ INFO | CONSUMER: Content length: 102
+ INFO | CONSUMER: JSON MessageID is: 3
+ INFO | CONSUMER: Result is: 0x01ccbb06aab710540482f7a93fcd581bd3f3542e161638ddeb447ed9182cbadc
+ INFO | CONSUMER: Transaction hash: 0x01ccbb06aab710540482f7a93fcd581bd3f3542e161638ddeb447ed9182cbadc
+ INFO | CONSUMER: Button 1 pressed
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_getTransactionReceipt",
+ INFO | CONSUMER: 	"params":	["0x01ccbb06aab710540482f7a93fcd581bd3f3542e161638ddeb447ed9182cbadc"],
+ INFO | CONSUMER: 	"id":	7
+ INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: Button 1 released
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":7,"jsonrpc":"2.0","result":{"transactionHash":"0x01ccbb06aab710540482f7a93fcd581bd3f3542e161638ddeb447ed9182cbadc","transactionIndex":"0x0","blockHash":"0x7c38d342529fbfe2d994a5142edae0e4d0c726560d74a335b1f0f63274ff25c5","blockNumber":"0x59","gasUsed":"0x1a64f","cumulativeGasUsed":"0x1a64f","contractAddress":null,"logs":[],"status":"0x1","logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"}}
+ INFO | CONSUMER: Content length: 876
+ INFO | CONSUMER: JSON MessageID is: 7
+ INFO | CONSUMER: Transaction confirmed
+ INFO | CONSUMER: waiting for http response
+ INFO | PRODUCER: CoAPServer: Incoming CoAP request:Option PublicKeyAvailable, Payload: CAFFE 
+ INFO | PRODUCER: PublicKeyAvailable request received
+ INFO | CONSUMER: CoAPClient receive data: Prepare payload data, Length: 20
+ INFO | PRODUCER: Prepare sensor payload data
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_call",
+ INFO | PRODUCER: 	"params":	[{
+ INFO | PRODUCER: 			"from":	"0x63c3465D4a300d767F0BDDD8d5ce256BbBD6fb41",
+ INFO | PRODUCER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | PRODUCER: 			"gas":	"0xfffffffffff",
+ INFO | PRODUCER: 			"data":	"0xfcc01d5100000000000000000000000000000000000000000000000000000000"
+ INFO | PRODUCER: 		}, "latest"],
+ INFO | PRODUCER: 	"id":	4
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":4,"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000275b4efc07bb4a8eb56faf050cf6436c2c06250e00000000000000000000000000000000000000000000000000000000000001102d2d2d2d2d424547494e205055424c4943204b45592d2d2d2d2d0a4d4947664d413047435371475349623344514542415155414134474e4144434269514b4267514355796f443255457a3645786f6c7a54676130727a6941754e660a587865532f354e79596568776e554d794c5542346a38693558424166466c64727a446d6b3844393733724177794b4a3976347371464e797a6a6a4a70496f6e300a4d434435643257532b3734767970766356365654575150706b382f70564c394d34313052764852436468523773566a5970393159724358414f447179307158510a6a3539634c6b745a683044563042697870774944415141420a2d2d2d2d2d454e44205055424c4943204b45592d2d2d2d2d0a00000000000000000000000000000000"}
+ INFO | PRODUCER: Content length: 806
+ INFO | PRODUCER: JSON MessageID is: 4
+ INFO | PRODUCER: Result is: 0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000275b4efc07bb4a8eb56faf050cf6436c2c06250e00000000000000000000000000000000000000000000000000000000000001102d2d2d2d2d424547494e205055424c4943204b45592d2d2d2d2d0a4d4947664d413047435371475349623344514542415155414134474e4144434269514b4267514355796f443255457a3645786f6c7a54676130727a6941754e660a587865532f354e79596568776e554d794c5542346a38693558424166466c64727a446d6b3844393733724177794b4a3976347371464e797a6a6a4a70496f6e300a4d434435643257532b3734767970766356365654575150706b382f70564c394d34313052764852436468523773566a5970393159724358414f447179307158510a6a3539634c6b745a683044563042697870774944415141420a2d2d2d2d2d454e44205055424c4943204b45592d2d2d2d2d0a00000000000000000000000000000000
+ INFO | PRODUCER: SEDProducerPublicKeyBuffer result: 
+ INFO | PRODUCER: -----BEGIN PUBLIC KEY-----
+ INFO | PRODUCER: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUyoD2UEz6ExolzTga0rziAuNf
+ INFO | PRODUCER: XxeS/5NyYehwnUMyLUB4j8i5XBAfFldrzDmk8D973rAwyKJ9v4sqFNyzjjJpIon0
+ INFO | PRODUCER: MCD5d2WS+74vypvcV6VTWQPpk8/pVL9M410RvHRCdhR7sVjYp91YrCXAODqy0qXQ
+ INFO | PRODUCER: j59cLktZh0DV0BixpwIDAQAB
+ INFO | PRODUCER: -----END PUBLIC KEY-----
+ INFO | PRODUCER: SEDEtherAccountAddressBuffer: 0x275b4efc07bb4a8eb56faf050cf6436c2c06250e
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: Accelerometer sensor data: 0
+ INFO | PRODUCER: Data encryption pubkey:-----BEGIN PUBLIC KEY-----
+ INFO | PRODUCER: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUyoD2UEz6ExolzTga0rziAuNf
+ INFO | PRODUCER: XxeS/5NyYehwnUMyLUB4j8i5XBAfFldrzDmk8D973rAwyKJ9v4sqFNyzjjJpIon0
+ INFO | PRODUCER: MCD5d2WS+74vypvcV6VTWQPpk8/pVL9M410RvHRCdhR7sVjYp91YrCXAODqy0qXQ
+ INFO | PRODUCER: j59cLktZh0DV0BixpwIDAQAB
+ INFO | PRODUCER: -----END PUBLIC KEY-----
+ INFO | PRODUCER: Data encryption successful:/-èÑÇß˜l²Ô·; Length: 128
+ INFO | PRODUCER: dataQueue after encryption: /-èÑÇß˜l²Ô·; Length: 128
+ INFO | PRODUCER: Calculate hash
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_sendTransaction",
+ INFO | PRODUCER: 	"params":	[{
+ INFO | PRODUCER: 			"from":	"0x63c3465D4a300d767F0BDDD8d5ce256BbBD6fb41",
+ INFO | PRODUCER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | PRODUCER: 			"gas":	"0xfffffffffff",
+ INFO | PRODUCER: 			"data":	"0x0ef812690000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002020d7baefb9e288554b33816c47aaee3b2f849b237b1fd1d43726b5d37577bf7f"
+ INFO | PRODUCER: 		}],
+ INFO | PRODUCER: 	"id":	1
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":1,"jsonrpc":"2.0","result":"0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c"}
+ INFO | PRODUCER: Content length: 102
+ INFO | PRODUCER: JSON MessageID is: 1
+ INFO | PRODUCER: Result is: 0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c
+ INFO | PRODUCER: Transaction hash: 0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_getTransactionReceipt",
+ INFO | PRODUCER: 	"params":	["0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c"],
+ INFO | PRODUCER: 	"id":	7
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":7,"jsonrpc":"2.0","result":null}
+ INFO | PRODUCER: Content length: 38
+ INFO | PRODUCER: JSON MessageID is: 7
+ INFO | PRODUCER: Transaction not confirmed
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_getTransactionReceipt",
+ INFO | PRODUCER: 	"params":	["0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c"],
+ INFO | PRODUCER: 	"id":	7
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":7,"jsonrpc":"2.0","result":{"transactionHash":"0x839ff5c646727d808e4ac70557254431091243ae44bffb4ed37b8b6d0cbcf43c","transactionIndex":"0x0","blockHash":"0x561fb0eb6166015991100b8eb1a1bd134482a8ca0fc0f6a7feaa40be1f6d8802","blockNumber":"0x5b","gasUsed":"0x895a","cumulativeGasUsed":"0x895a","contractAddress":null,"logs":[],"status":"0x1","logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"}}
+ INFO | PRODUCER: Content length: 874
+ INFO | PRODUCER: JSON MessageID is: 7
+ INFO | PRODUCER: Transaction confirmed
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: Encrypted sensor data pushed into dataQueue and data hash written into blockchain
+ INFO | CONSUMER: Button 1 pressed
+ INFO | PRODUCER: CoAPServer: Incoming CoAP request:Option Data, Payload: CAFFE 
+ INFO | PRODUCER: Data request received
+ INFO | PRODUCER: QUEUE coap server received data: /-èÑÇß˜l²Ô·; Length: 128
+ INFO | PRODUCER: Response buffer: Data_/-èÑÇß˜l²Ô·; Length: 18
+ INFO | CONSUMER: CoAPClient server response: Data_/-èÑÇß˜l²Ô·; Length: 133
+ INFO | CONSUMER: CoAPClient data pushed into dataQueue
+ INFO | CONSUMER: CoAPClient: Queue data received: /-èÑÇß˜l²Ô·, Length: 128
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_call",
+ INFO | CONSUMER: 	"params":	[{
+ INFO | CONSUMER: 			"from":	"0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E",
+ INFO | CONSUMER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | CONSUMER: 			"gas":	"0xfffffffffff",
+ INFO | CONSUMER: 			"data":	"0x0546bedb00000000000000000000000000000000000000000000000000000000"
+ INFO | CONSUMER: 		}, "latest"],
+ INFO | CONSUMER: 	"id":	2
+ INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: Button 1 released
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":2,"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002020d7baefb9e288554b33816c47aaee3b2f849b237b1fd1d43726b5d37577bf7f"}
+ INFO | CONSUMER: Content length: 230
+ INFO | CONSUMER: JSON MessageID is: 2
+ INFO | CONSUMER: Result is: 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002020d7baefb9e288554b33816c47aaee3b2f849b237b1fd1d43726b5d37577bf7f
+ INFO | CONSUMER: SEDConsumerDataHashBuffer result: 
+ INFO | CONSUMER:  ×ºï¹âˆUK3?lGªî;/„›#{ÑÔ7&µÓuw¿
+ INFO | CONSUMER: waiting for http response
+ INFO | CONSUMER: Data decryption successful:0 ; Length: 1
+ INFO | CONSUMER: Calculate hash
+ INFO | CONSUMER: Data successfully verified
+ INFO | CONSUMER: Send positive vote
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_sendTransaction",
+ INFO | CONSUMER: 	"params":	[{
+ INFO | CONSUMER: 			"from":	"0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E",
+ INFO | CONSUMER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | CONSUMER: 			"gas":	"0xfffffffffff",
+ INFO | CONSUMER: 			"data":	"0x04da139300000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000"
+ INFO | CONSUMER: 		}],
+ INFO | CONSUMER: 	"id":	5
+ INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":5,"jsonrpc":"2.0","result":"0xebfbbb34d8a5af02aca22a93ff86c23ffaa1c93ee83efe1f4146c3f811b6f379"}
+ INFO | CONSUMER: Content length: 102
+ INFO | CONSUMER: JSON MessageID is: 5
+ INFO | CONSUMER: Result is: 0xebfbbb34d8a5af02aca22a93ff86c23ffaa1c93ee83efe1f4146c3f811b6f379
+ INFO | PRODUCER: Button 1 pressed
+ INFO | PRODUCER: Button 1 released
+ INFO | PRODUCER: Acceleration sensor value is: 3 G
+ INFO | CONSUMER: Button 1 pressed
+ INFO | PRODUCER: CoAPServer: Incoming CoAP request:Option ContractAddress, Payload: 0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E 
+ INFO | PRODUCER: ContractAddress request received
+ INFO | CONSUMER: Button 1 released
+ INFO | PRODUCER: Prepare sensor payload data
+ INFO | PRODUCER: Accelerometer sensor data: 3
+ INFO | PRODUCER: Data encryption pubkey:-----BEGIN PUBLIC KEY-----
+ INFO | PRODUCER: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUyoD2UEz6ExolzTga0rziAuNf
+ INFO | PRODUCER: XxeS/5NyYehwnUMyLUB4j8i5XBAfFldrzDmk8D973rAwyKJ9v4sqFNyzjjJpIon0
+ INFO | PRODUCER: MCD5d2WS+74vypvcV6VTWQPpk8/pVL9M410RvHRCdhR7sVjYp91YrCXAODqy0qXQ
+ INFO | PRODUCER: j59cLktZh0DV0BixpwIDAQAB
+ INFO | PRODUCER: -----END PUBLIC KEY-----
+ INFO | PRODUCER: Data encryption successful:"pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[; Length: 128
+ INFO | PRODUCER: dataQueue after encryption: "pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[; Length: 128
+ INFO | PRODUCER: Calculate hash
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_sendTransaction",
+ INFO | PRODUCER: 	"params":	[{
+ INFO | PRODUCER: 			"from":	"0x63c3465D4a300d767F0BDDD8d5ce256BbBD6fb41",
+ INFO | PRODUCER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | PRODUCER: 			"gas":	"0xfffffffffff",
+ INFO | PRODUCER: 			"data":	"0x0ef812690000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002036b1a5b2da7baf902707f6dbff04f3a7bb001988de127507daa0acb336996f8c"
+ INFO | PRODUCER: 		}],
+ INFO | PRODUCER: 	"id":	1
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":1,"jsonrpc":"2.0","result":"0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9"}
+ INFO | PRODUCER: Content length: 102
+ INFO | PRODUCER: JSON MessageID is: 1
+ INFO | PRODUCER: Result is: 0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9
+ INFO | PRODUCER: Transaction hash: 0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_getTransactionReceipt",
+ INFO | PRODUCER: 	"params":	["0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9"],
+ INFO | PRODUCER: 	"id":	7
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":7,"jsonrpc":"2.0","result":null}
+ INFO | PRODUCER: Content length: 38
+ INFO | PRODUCER: JSON MessageID is: 7
+ INFO | PRODUCER: Transaction not confirmed
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_getTransactionReceipt",
+ INFO | PRODUCER: 	"params":	["0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9"],
+ INFO | PRODUCER: 	"id":	7
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":7,"jsonrpc":"2.0","result":null}
+ INFO | PRODUCER: Content length: 38
+ INFO | PRODUCER: JSON MessageID is: 7
+ INFO | PRODUCER: Transaction not confirmed
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: JSON string: 
+ INFO | PRODUCER: {
+ INFO | PRODUCER: 	"jsonrpc":	"2.0",
+ INFO | PRODUCER: 	"method":	"eth_getTransactionReceipt",
+ INFO | PRODUCER: 	"params":	["0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9"],
+ INFO | PRODUCER: 	"id":	7
+ INFO | PRODUCER: }
+ INFO | PRODUCER: TcpMsg_prependPartFactory
+ INFO | PRODUCER: Send http request successful
+ INFO | PRODUCER: HTTP request sent!
+ INFO | PRODUCER: HTTP response: 200 [application/json]
+ INFO | PRODUCER: {"id":7,"jsonrpc":"2.0","result":{"transactionHash":"0xd6cda5ac2dc5bde2f0779c2a3b1b0e795cc288c61ad0e6f21c45c087a10c0aa9","transactionIndex":"0x0","blockHash":"0x5eb4d9ce091e246e2103dd93c5630c1973e654b418f45b6134cf6730b91c558e","blockNumber":"0x60","gasUsed":"0x891a","cumulativeGasUsed":"0x891a","contractAddress":null,"logs":[],"status":"0x1","logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"}}
+ INFO | PRODUCER: Content length: 874
+ INFO | PRODUCER: JSON MessageID is: 7
+ INFO | PRODUCER: Transaction confirmed
+ INFO | PRODUCER: waiting for http response
+ INFO | PRODUCER: Encrypted sensor data pushed into dataQueue and data hash written into blockchain
+ INFO | CONSUMER: Button 1 pressed
+ INFO | CONSUMER: Button 1 released
+ INFO | PRODUCER: CoAPServer: Incoming CoAP request:Option Data, Payload: CAFFE 
+ INFO | PRODUCER: Data request received
+ INFO | PRODUCER: QUEUE coap server received data: "pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[; Length: 128
+ INFO | PRODUCER: Response buffer: Data_"pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[; Length: 133
+ INFO | CONSUMER: CoAPClient server response: Data_"pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[; Length: 133
+ INFO | CONSUMER: CoAPClient data pushed into dataQueue
+ INFO | CONSUMER: CoAPClient: Queue data received: "pc}¿Æé“«mänRûºç7ÝFŽl¶•×OCøè‚}G˜â)Ðúh©_9¯1×2jÉžr0lÍ³7kNÓ4RËŠBLX'B¤?höÔKLˆq®´HÉ8ðC0Œ$ðÍ»Èop‚ŒT»A›‹ÓêhYáorI#N­~}gžX[, Length: 128
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_call",
+ INFO | CONSUMER: 	"params":	[{
+ INFO | CONSUMER: 			"from":	"0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E",
+ INFO | CONSUMER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | CONSUMER: 			"gas":	"0xfffffffffff",
+ INFO | CONSUMER: 			"data":	"0x0546bedb00000000000000000000000000000000000000000000000000000000"
+ INFO | CONSUMER: 		}, "latest"],
+ INFO | CONSUMER: 	"id":	2
+ INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":2,"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002036b1a5b2da7baf902707f6dbff04f3a7bb001988de127507daa0acb336996f8c"}
+ INFO | CONSUMER: Content length: 230
+ INFO | CONSUMER: JSON MessageID is: 2
+ INFO | CONSUMER: Result is: 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002036b1a5b2da7baf902707f6dbff04f3a7bb001988de127507daa0acb336996f8c
+ INFO | CONSUMER: SEDConsumerDataHashBuffer result: 
+ INFO | CONSUMER: 6±¥²Ú{¯?'öÛÿó§»
+ INFO | CONSUMER: waiting for http response
+ INFO | CONSUMER: Data decryption successful:3 ; Length: 1
+ INFO | CONSUMER: Calculate hash
+ INFO | CONSUMER: Data successfully verified
+ INFO | CONSUMER: Send positive vote
+ INFO | CONSUMER: JSON string: 
+ INFO | CONSUMER: {
+ INFO | CONSUMER: 	"jsonrpc":	"2.0",
+ INFO | CONSUMER: 	"method":	"eth_sendTransaction",
+ INFO | CONSUMER: 	"params":	[{
+ INFO | CONSUMER: 			"from":	"0x275b4EFC07BB4A8eb56fAF050Cf6436C2c06250E",
+ INFO | CONSUMER: 			"to":	"0xC47E575b2cACDC22545dA4C0FE7aeaD9ce90A9f2",
+ INFO | CONSUMER: 			"gas":	"0xfffffffffff",
+ INFO | CONSUMER: 			"data":	"0x04da13930000000000000000000000000000000000000000000000000000000000000001"
+ INFO | CONSUMER: 		}],
+ INFO | CONSUMER: 	"id":	5
+ INFO | CONSUMER: }
+ INFO | CONSUMER: TcpMsg_prependPartFactory
+ INFO | CONSUMER: Send http request successful
+ INFO | CONSUMER: HTTP request sent!
+ INFO | CONSUMER: HTTP response: 200 [application/json]
+ INFO | CONSUMER: {"id":5,"jsonrpc":"2.0","result":"0x766cdcaf4881ec4659e7eb94d656b5a2fd094133bd4f83fbb53dd2c20357f15a"}
+ INFO | CONSUMER: Content length: 102
+ INFO | CONSUMER: JSON MessageID is: 5
+ INFO | CONSUMER: Result is: 0x766cdcaf4881ec4659e7eb94d656b5a2fd094133bd4f83fbb53dd2c20357f15a

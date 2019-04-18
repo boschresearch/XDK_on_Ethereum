@@ -1,0 +1,95 @@
+﻿// Copyright (c) 2017 Robert Bosch GmbH
+
+// All rights reserved.
+
+//
+
+
+
+Build mbedTLS for Bosch XDK (MbedTLS version 2.8.0 is used here):
+If you already have the libs available in your repository then skip first four steps and start at step 5 (if you cloned the EOD repository mbedTLS is already available).
+1.	Adapt mbedtls configuration file in mbedtls-2.8.0/configs folder to your use cases (see code on page 2) 
+2.	Compile mbedTLS lib for cortex-M3:
+	“make CC=/XDK-Workbench/XDK/armGCC/bin/arm-none-eabi-gcc AR=/XDK-Workbench/XDK/armGCC/bin/arm-none-eabi-ar RL=/XDK-Workbench/XDK/armGCC/bin/arm-none-eabi-ld”
+3.	Add compiled source files (libs) to your repository in: 			mbedtls\source
+4.	Add mbedtls include folder with header files to your repository: 	mbedtls\include\mbedtls
+
+Adapt XDK make structure to include mbedTLS sources to your local application (examples of adapted application.mk & Libraries.mk can be found in the EOD repository):
+5.	Change XDK-Workbench\XDK\SDK\xdk110\Common\application.mk. 
+	a.	Add “MBEDTLS_LIBRARY_PATH := $(BCDS_APP_DIR)/mbedtls”
+	b.	Add 
+		“ifeq ($(SEED_BUILD), TRUE)
+			BCDS_XDK_EXT_INCLUDES += \
+			-isystem $(MBEDTLS_LIBRARY_PATH)/include
+		endif"
+		after the “BCDS_XDK_EXT_INCLUDES += “ Macro list
+	c.	Add
+		"ifeq ($(SEED_BUILD), TRUE)
+			BCDS_XDK_PLATFORM_SOURCE_FILES := $(filter-out $(BCDS_XDK_COMMON_PATH)/source/cJSON.c, $(BCDS_XDK_PLATFORM_SOURCE_FILES)) 
+		endif" 
+		after the "BCDS_XDK_PLATFORM_SOURCE_FILES += " Macro list
+
+7.	Change XDK-Workbench\XDK\SDK\xdk110\Common\Libraries.mk
+	a.	Add 
+		“ifeq ($(SEED_BUILD), TRUE)
+		   BCDS_THIRD_PARTY_LIBS += \
+		   $(MBEDTLS_LIBRARY_PATH)/source/libmbedcrypto.a 
+		   #$(MBEDTLS_LIBRARY_PATH)/source/libmedtls.a \
+		   #$(MBEDTLS_LIBRARY_PATH)/source/libmedx509.a
+		endif”
+		After the “BCDS_THIRD_PARTY_LIBS= \” Macro list
+
+Those if conditions prevent other project builds which don't include mbedTLS from crashing.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+MbedTLS example configuration file: 
+
+#ifndef MBEDTLS_CONFIG_H
+#define MBEDTLS_CONFIG_H
+/* System support */
+#define MBEDTLS_HAVE_ASM
+#define MBEDTLS_HAVE_TIME
+/* mbed TLS feature support */
+#define MBEDTLS_CIPHER_MODE_CBC
+#define MBEDTLS_CIPHER_PADDING_PKCS7
+#define MBEDTLS_REMOVE_ARC4_CIPHERSUITES
+#define MBEDTLS_ECP_DP_SECP256R1_ENABLED
+#define MBEDTLS_ECP_DP_SECP384R1_ENABLED
+#define MBEDTLS_ECP_DP_CURVE25519_ENABLED
+#define MBEDTLS_ECP_NIST_OPTIM
+#define MBEDTLS_ECDSA_DETERMINISTIC
+#define MBEDTLS_PK_RSA_ALT_SUPPORT
+#define MBEDTLS_PKCS1_V15
+#define MBEDTLS_PKCS1_V21
+#define MBEDTLS_SELF_TEST
+#define MBEDTLS_VERSION_FEATURES
+/* user defined DEFINES */
+#define MBEDTLS_ENTROPY_C
+#define MBEDTLS_NO_PLATFORM_ENTROPY
+#define MBEDTLS_ENTROPY_FORCE_SHA256
+#define MBEDTLS_CTR_DRBG_C
+#define MBEDTLS_AES_C
+/* mbed TLS modules */
+#define MBEDTLS_ASN1_PARSE_C
+#define MBEDTLS_ASN1_WRITE_C
+#define MBEDTLS_BASE64_C
+#define MBEDTLS_BIGNUM_C
+#define MBEDTLS_CCM_C
+#define MBEDTLS_CIPHER_C
+#define MBEDTLS_ECDSA_C
+#define MBEDTLS_ECP_C
+#define MBEDTLS_ERROR_C
+#define MBEDTLS_HMAC_DRBG_C
+#define MBEDTLS_MD_C
+#define MBEDTLS_OID_C
+#define MBEDTLS_PEM_PARSE_C
+#define MBEDTLS_PK_C
+#define MBEDTLS_PK_PARSE_C
+#define MBEDTLS_PK_WRITE_C
+#define MBEDTLS_PLATFORM_C
+#define MBEDTLS_RSA_C
+#define MBEDTLS_SHA256_C
+#define MBEDTLS_VERSION_C
+#include "check_config.h"
+#endif /* MBEDTLS_CONFIG_H */
